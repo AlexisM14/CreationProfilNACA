@@ -12,6 +12,8 @@ Pour utiliser ce script, il suffit de :
 - Lancer le script
 - Suivre les instructions données dans la console
 
+Attention, une fois que la courbe du profil est affichée, le script se met en pause, il faut alors fermer la fenêtre de la courbe pour qu'il reprenne.
+
 # Stratégie adoptée pour la structure du code
 Le code a été réalisé dans un premier temps en supposant que l'utilisateur donnerait tout le temps des réponses appropriées. Ainsi les entrées telles que : les deux derniers chiffres du profil, la longueur de la corde, le nombre de points de discrétisation, la méthode de répartition des points ont toujours le bon type et respectent les choix proposés.
 
@@ -75,3 +77,8 @@ Le programme principal fonctionne de la manière suivante :
         - non : le script est fini
 
 La procédure nettoyer_ecran est utilisée afin d'enlever les informations de la console, il s'agit d'une procédure qui affiche assez de lignes pour faire remonter les lignes précédentes de manière à les faire "disparaître".
+
+# Références
+Certaines fonctions et procédures ont été reprises de projets précédents :
+- [MGA802 - Jeu du pendu](https://github.com/AlexisM14/JeuDuPendu) : nettoyer_ecran
+- [MGA802 - Chiffrement César](https://github.com/MartinGrG/VeniVidiVici) : verifier_int
