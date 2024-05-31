@@ -5,6 +5,8 @@ L'utilisateur a l'opportunité de donner les 2 chiffres 'XX' du profil, la longu
 
 Enfin l'utilisateur a la possibilité d'enregistrer les coordonnées sous la forme d'un fichier .txt : 'coordonnees_profil_NACA00XX.txt' et la courbe du profil sous la forme d'une image .png : 'profil_NACA00XX.png'. Ces fichiers seront enregistrés dans le même dossier que celui depuis lequel est lancé ce script.
 
+Du code LaTex a été utilisé pour créer ce README, ainsi il est meilleur de le lire directement sur GitHub, les formules mathématiques apparaîtront.
+
 # Comment utiliser le code
 Pour utiliser ce script, il suffit de :
 - Télécharger le script
@@ -16,9 +18,10 @@ Attention, une fois que la courbe du profil est affichée, le script se met en p
 
 # Stratégie adoptée pour la structure du code
 Le code a été réalisé dans un premier temps en supposant que l'utilisateur donnerait tout le temps des réponses appropriées. Ainsi les entrées telles que : les deux derniers chiffres du profil, la longueur de la corde, le nombre de points de discrétisation, la méthode de répartition des points ont toujours le bon type et respectent les choix proposés.
+Par la suite, des vérifications de réponses ont été ajoutées afin d'assurer le bon fonctionnement du script.
 
 ## Calcul de l'épaisseur maximale et de sa position
-L'épaisseur maximale du profil est calculée d'après la formule : $t=corde \times \frac{XX}{100}$. D'un autre côté, on recherche l'index du maximum de la liste des coordonnées y, la position de l'épaisseur maximale se situe dans la liste des coordonnées x autour de cet index.
+L'épaisseur maximale du profil est calculée d'après la formule : $t=corde \times \frac{XX}{100}$ (t = corde*XX/100). D'un autre côté, on recherche l'index du maximum de la liste des coordonnées y, la position de l'épaisseur maximale se situe dans la liste des coordonnées x autour de cet index.
 
 ## Calcul des répartitions des coordonnées x
 Pour répartir les coordonnées x, l'utilisateur à deux choix : linéaire ou non-uniforme.
@@ -40,7 +43,7 @@ Afin de s'assurer que le code fonctionne correctement, plusieurs fonctions de ve
 ### Fonction verifier_binaire
 Cette fonction prend en entrée deux choix : choix1 et choix2. Tant que l'utilisateur n'a pas entré une réponse correspondant à l'un de ces choix, la fonction continue de demander à l'utilisateur de répondre correctement.
 
-Cette fonction est utilisée dans le script lorsque l'utilisateur doit choisir entre 'oui' et 'non' ou encore 'linéaire' et 'non_uniforme'.
+Cette fonction est utilisée dans le script lorsque l'utilisateur doit choisir entre 'oui' et 'non' ou encore 'linéaire' et 'non-uniforme'.
 
 ### Fonction verifier_int
 Cette fonction sert à vérifier qu'une chaîne de caractère contient seulement un entier.
@@ -63,9 +66,9 @@ Le programme principal fonctionne de la manière suivante :
 - On présente le script
 - On demande le numéro du profil, la longueur de la corde, le nombre de points de discrétisation, la distribution
 - On affiche les informations entrées à l'utilisateur et on lui propose de modifier ses choix ou de continuer :
-  - Modifier : on lance main de nouveau
+  - Modifier : on lance <i>main</i> de nouveau
   - Continuer :
-    - On calcule les coordonnées x_up, x_down, y_up et y_down selon la distribution choisie
+    - On calcule les coordonnées <i>x_up</i>, <i>x_down</i>, <i>y_up</i> et <i>y_down</i> selon la distribution choisie
     - On calcule l'épaisseur maximale et sa position le long de la corde
     - On trace les courbes intrados et extrados
     - On propose à l'utilisateur d'enregistrer la courbe dans le fichier 'profil_NACA00XX.png'
@@ -73,7 +76,7 @@ Le programme principal fonctionne de la manière suivante :
     - On affiche les coordonnées du profil
     - On propose à l'utilisateur d'enregistrer les coordonnées du profil dans le fichier 'coordonnees_profil_NACA00XX.txt'
     - On propose à l'utilisateur d'étudier un nouveau profil :
-        - oui : on lance main de nouveau
+        - oui : on lance <i>main</i> de nouveau
         - non : le script est fini
 
 La procédure nettoyer_ecran est utilisée afin d'enlever les informations de la console, il s'agit d'une procédure qui affiche assez de lignes pour faire remonter les lignes précédentes de manière à les faire "disparaître".
